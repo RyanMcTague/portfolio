@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:prod": "vercel --prod",
-    "deploy:preview": "vercel",
     "test:pages": "jest --projects test/pages",
     "test:components": "jest --projects test/components",
     "test:api": "jest --projects test/api",
-    "test": "npm-run-all test:api test:components test:pages"
+    "test": "npm-run-all test:api test:components test:pages",
+    "firebase:start": "firebase emulators:start --export-on-exit=./.data --import=./.data",
+    "deploy:prod": "vercel --prod",
+    "deploy:preview": "vercel",
+    "deploy:firestore": "firebase deploy --only firestore:rules",
+    "fdeploy:storage": "firebase deploy --only storage"
   },
   "dependencies": {
     "axios": "^1.3.4",
